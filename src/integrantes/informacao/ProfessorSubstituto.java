@@ -8,6 +8,7 @@ public class ProfessorSubstituto {
     private int numAulas;
 
 
+
     public ProfessorSubstituto(String nome, String numero, String email, String departamento, int numAulas){
         this.nome = nome;
         this.numero = numero;
@@ -18,5 +19,9 @@ public class ProfessorSubstituto {
     public String getDesc(){
         String desc = "Prof(a): "+nome+" Telefone: "+numero+"\n("+email+")\n"+"departamento: "+departamento+" - "+numAulas+" aulas mensais.";
         return desc;
+    }
+    @Override
+    public String toString(){
+        return getDesc();
     }
 }

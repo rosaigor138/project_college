@@ -20,7 +20,7 @@ public class ProfessorEfetivo {
     public String getDesc() {
         String desc = "Prof(a): " + nome +
                 " - Telefone: " + telefone +
-                "\n(" + email + ")\nDepartamento de " + departamento + " - Dedicação exclusiva\n" +
+                "\n(" + email + ")\nDepartamento de " + departamento + " - Dedicacaoo exclusiva\n" +
                 "Salario:R$" + salario + "\nContratado em " + dataContrat;
         return desc;
     }

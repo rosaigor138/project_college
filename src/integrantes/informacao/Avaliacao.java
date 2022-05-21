@@ -9,9 +9,14 @@ public class Avaliacao {
         this.valor = valor;
     }
 
+    public String getDesc() {
+       String desc = "Essa e a: "+descricao+" e ela vale: "+valor;
+       return desc;
+    }
+
+
     @Override
     public String toString() {
-        
-        return super.toString();
+        return getDesc();
     }
 }
