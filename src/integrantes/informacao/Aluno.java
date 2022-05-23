@@ -1,5 +1,6 @@
 package integrantes.informacao;
-import java.util.ArrayList;
+import java.time.LocalDate;
+
 public class Aluno {
 
     private String nome;
@@ -8,21 +9,35 @@ public class Aluno {
     private String email;
     private Disciplina[] historicoDisciplinas;
     private int contador = 0;
-    private int numDis = 0;
+    private int numDis;
+    private static int contadorMatricula = 1;
+    private String matricula;
+    public static LocalDate date;
 
     public Aluno(String nome, String telefone, String email, int numDisc) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.historicoDisciplinas = new Disciplina[numDisc];
+        this.numDis = numDisc;
+        if (date == null) {
+            Aluno.date = LocalDate.now();
+        } else if (Aluno.date.getYear() != LocalDate.now().getYear()) {
+            Aluno.contadorMatricula = 1;
+        }else Aluno.contadorMatricula++;
+        this.matricula = LocalDate.now().getYear() +"-"+contadorMatricula;
     }
+
 
     public void novaDisc(Disciplina disciplina) {
         if (this.contador < this.numDis) {
-            this.historicoDisciplinas[contador++] = disciplina;
+            this.historicoDisciplinas[contador] = disciplina;
+            contador++;
         }
     }
-
+    public String getMatricula(){
+        return this.matricula;
+    }
     public String getDesc() {
         String desc = "Aluno: " + nome + " Telefone: " + telefone + "\n(" + email + ")";
         return desc;
@@ -51,26 +66,26 @@ public class Aluno {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public Disciplina[] getHistoricoDisciplinas() {
-        return historicoDisciplinas;
+    public double calculaIRA(){
+        double ira = 0;
+        for(int i=0; i<contador;i++){
+            ira += historicoDisciplinas[i].calculaMedia();
+        }return ira/contador;
     }
+
     /*@Override
     public String toString() {
         String text = "";
         for (int i=0;i<this.contador;i++){
-            text = text.concat(this.historicoDisciplinas[i].toString()+"\n");
+            text = text.concat(this.historicoDisciplinas[i].toString());
         }
         return text;
-    }*/
-    public void imprimirHistorico(){
+    }*/  //O mesmo do imprimirHistorico, porém através da sobreescrita do metodo toString
+    public String imprimirHistorico(){
+        String historico = "\n Historico de disciplinas do aluno "+this.nome +"\n";
         for (int i =0;i<this.contador;i++){
-            System.out.println(this.historicoDisciplinas[i].toString());
-        }
-    }
-
-    public int getContador() {
-        return contador;
+            historico = historico.concat(this.historicoDisciplinas[i].toString());
+        }return historico; //Não foi pedida a impressão do historico no enunciado, porém achei justo adicionar
     }
 
     public int getNumDis() {

@@ -4,24 +4,28 @@ public class ProfessorEfetivo {
     private String nome;
     private String telefone;
     private String email;
-    private String departamento;
-    private double salario;
     private String dataContrat;
-
-    public ProfessorEfetivo(String nome, String telefone, String email, String departamento, double salario, String dataContrat) {
+    private Regime regime;
+    private String departamento;
+    public ProfessorEfetivo(String nome,
+                            String telefone,
+                            String email,
+                            String dataContrat,
+                            Regime regime,
+                            String departamento) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-        this.departamento = departamento;
-        this.salario = salario;
         this.dataContrat = dataContrat;
+        this.regime = regime;
+        this.departamento = departamento;
     }
 
     public String getDesc() {
         String desc = "Prof(a): " + nome +
                 " - Telefone: " + telefone +
-                "\n(" + email + ")\nDepartamento de " + departamento + " - Dedicacaoo exclusiva\n" +
-                "Salario:R$" + salario + "\nContratado em " + dataContrat;
+                "\n(" + email + ")\nDepartamento de " + departamento +"\n" +
+                "Salario:R$" + regime.getSalario() + "\nContratado em " + dataContrat;
         return desc;
     }
 
