@@ -1,24 +1,20 @@
 package integrantes.informacao;
 
-public class ProfessorEfetivo {
+public class ProfessorEfetivo extends Funcionario {
     private String nome;
     private String telefone;
     private String email;
     private String dataContrat;
     private Regime regime;
-    private String departamento;
     public ProfessorEfetivo(String nome,
                             String telefone,
                             String email,
                             String dataContrat,
                             Regime regime,
                             String departamento) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.email = email;
+        super(nome,telefone,email,departamento);
         this.dataContrat = dataContrat;
         this.regime = regime;
-        this.departamento = departamento;
     }
 
     public String getDesc() {

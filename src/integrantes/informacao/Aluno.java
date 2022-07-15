@@ -1,21 +1,15 @@
 package integrantes.informacao;
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Aluno {
+public class Aluno extends Pessoa implements Descricoes{
 
-    private String nome;
-
-    private String telefone;
-    private String email;
     private ArrayList<Disciplina> historicoDisciplinas;
     private static int contadorMatricula = 1;
     private String matricula;
-    public static LocalDate date;
+    private static LocalDate date;
 
     public Aluno(String nome, String telefone, String email) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.email = email;
+        super(nome, telefone, email);
         historicoDisciplinas = new ArrayList<Disciplina>();
         if (date == null) {
             Aluno.date = LocalDate.now();
@@ -42,7 +36,7 @@ public class Aluno {
         return this.matricula;
     }
     public String getDesc() {
-        String desc = "Aluno: " + nome + " Telefone: " + telefone + "\n(" + email + ")";
+        String desc = "Aluno: " + nome + " Telefone: " + telefone    + "\n(" + email + ")";
         return desc;
     }
     public double calculaIRA(){
@@ -60,7 +54,8 @@ public class Aluno {
         }return historico;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public String toString() {
+        return imprimirHistorico();
     }
 }

@@ -23,7 +23,7 @@ public class testeColegio {
                 "329999999",
                 "igor@ifsudeste.com",
                 "ti",
-                20);
+                20,45.50);
         System.out.println(ps1.getDesc());
         Avaliacao av1 = new Avaliacao("Prim Prova",9.00);
         Avaliacao av2 = new Avaliacao("Segunda prova",4.00);
