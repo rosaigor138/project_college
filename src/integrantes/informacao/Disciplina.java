@@ -26,8 +26,7 @@ public class Disciplina {
     }
 
     public String getID(){
-        String identificador;
-        return identificador = "D"+this.id;
+        return "D"+this.id;
     }
     public double calculaMedia(){
         double media = 0;

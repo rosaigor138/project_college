@@ -13,12 +13,10 @@ public class Avaliacao {
         this.id = contadorId;
     }
     public String getIdAv(){
-        String idAv;
-        return  idAv = "A"+id;
+        return  "A"+id;
     }
     public String getDesc() {
-       String desc = "Essa e a: "+descricao+" e ela vale: "+valor;
-       return desc;
+       return "Essa e a: "+descricao+" e ela vale: "+valor;
     }
     public double getValor(){
         return this.valor;
