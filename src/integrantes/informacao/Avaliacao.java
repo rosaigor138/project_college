@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-public class Avaliacao {
+public class Avaliacao implements Descricoes{
     private String descricao;
     private double valor;
     private static int contadorId =0;

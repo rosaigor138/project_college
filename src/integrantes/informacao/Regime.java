@@ -1,7 +1,7 @@
 package integrantes.informacao;
 
 public class Regime {
-    private String descricao;//podendo ser coisas como, dedicação exclusiva,20hrs,10hrs
+    private String descricao;
     private double salario;
 
     public Regime(String descricao,double salario){
