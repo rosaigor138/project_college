@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-public class ProfessorEfetivo extends Funcionario {
+public class ProfessorEfetivo extends Funcionario implements Descricoes,Tratamento{
     private String nome;
     private String telefone;
     private String email;
@@ -11,19 +11,27 @@ public class ProfessorEfetivo extends Funcionario {
                             String email,
                             String dataContrat,
                             Regime regime,
-                            String departamento) {
-        super(nome,telefone,email,departamento);
+                            String departamento,boolean sexo) {
+        super(nome,telefone,email,departamento,sexo);
         this.dataContrat = dataContrat;
         this.regime = regime;
     }
+    public String getTratamento(){
+        if (sexo){
+            return "Profa Efetiva "+getNome();
+        }else return "Prof Efetivo"+getNome();
+    }
 
     public String getDesc() {
-        String desc = "Prof(a): " + nome +
+        String desc = getTratamento()+
                 " - Telefone: " + telefone +
                 "\n(" + email + ")\nDepartamento de " + departamento +"\n" +
                 "Salario:R$" + regime.getSalario() + "\nContratado em " + dataContrat;
         return desc;
     }
-
+    @Override
+    public String toString(){
+        return getDesc();
+    }
 
 }
