@@ -6,7 +6,7 @@ public class Aluno extends Pessoa implements Descricoes , Tratamento{
     private ArrayList<Disciplina> historicoDisciplinas;
     private static int contadorMatricula = 1;
     private String matricula;
-    private static LocalDate date;
+    private static LocalDate anoDaMatricula;
 
     public Aluno(String nome, String telefone, String email,boolean sexo) {
         super(nome, telefone, email,sexo);
