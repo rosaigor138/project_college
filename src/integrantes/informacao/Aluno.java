@@ -11,9 +11,9 @@ public class Aluno extends Pessoa implements Descricoes , Tratamento{
     public Aluno(String nome, String telefone, String email,boolean sexo) {
         super(nome, telefone, email,sexo);
         historicoDisciplinas = new ArrayList<Disciplina>();
-        if (date == null) {
-            Aluno.date = LocalDate.now();
-        } else if (Aluno.date.getYear() != LocalDate.now().getYear()) {
+        if (anoDaMatricula == null) {
+            Aluno.anoDaMatricula = LocalDate.now();
+        } else if (Aluno.anoDaMatricula.getYear() != LocalDate.now().getYear()) {
             Aluno.contadorMatricula = 1;
         }else Aluno.contadorMatricula++;
         this.matricula = LocalDate.now().getYear() +"-"+contadorMatricula;
