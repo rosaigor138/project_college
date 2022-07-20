@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Tratamento {
     protected String nome;
     protected String telefone;
     protected String email;
@@ -21,4 +21,5 @@ public abstract class Pessoa {
     public String getEmail(){
         return this.email;
     }
+
 }

@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-public class ProfessorSubstituto extends Funcionario implements Descricoes,Tratamento{
+public class ProfessorSubstituto extends Funcionario implements Tratamento{
     private int numAulas;
     private static double valorHoraAula;
 
@@ -23,10 +23,14 @@ public class ProfessorSubstituto extends Funcionario implements Descricoes,Trata
                 "departamento: "+getTelefone()+" - "+getNumAulas()+" aulas mensais.";
         return desc;
     }
+    public double getSalarioMesAtual(){
+        return this.valorHoraAula * this.getNumAulas();
+    }
 
     public static double getValorHoraAula() {
         return valorHoraAula;
     }
+
 
     public int getNumAulas() {
         return numAulas;

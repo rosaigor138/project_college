@@ -1,7 +1,7 @@
 package integrantes.informacao;
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Aluno extends Pessoa implements Descricoes , Tratamento{
+public class Aluno extends Pessoa implements Tratamento{
 
     private ArrayList<Disciplina> historicoDisciplinas;
     private static int contadorMatricula = 1;
@@ -24,7 +24,6 @@ public class Aluno extends Pessoa implements Descricoes , Tratamento{
             return "Prezada Aluna "+getNome();
         }else return "Prezado Aluno "+getNome();
     }
-
 
     public void novaDisc(Disciplina disciplina) {
         this.historicoDisciplinas.add(disciplina);

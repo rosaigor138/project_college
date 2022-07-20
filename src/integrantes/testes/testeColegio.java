@@ -16,9 +16,9 @@ public class testeColegio {
                 "329999999",
                 "hiltonmartins@ifsudeste.com",
                 "01/01/2001",
-                new Regime("Dedicacao Exclusiva",1800.00),
+                new Regime(true),
                 "Departamento de TI",true);//hilton mocinha
-        System.out.println(pe1.getDesc());
+        System.out.println(pe1.toString());
         ProfessorSubstituto ps1 = new ProfessorSubstituto("Igor Rosa",
                 "329999999",
                 "igor@ifsudeste.com",
@@ -70,6 +70,11 @@ public class testeColegio {
         System.out.println(ds3.toString());
         ds3.apagarAvaliacao(avt);
         System.out.println(ds3.toString());
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(a1));
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(pe1));
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(ps1));
+        System.out.println(ps1.getSalarioMesAtual());
+        System.out.println(pe1.getSalario());
     }
 
 }
