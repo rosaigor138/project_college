@@ -1,0 +1,230 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "integrantes.informacao.Aluno",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_63486649 { 
+   	label=informacao
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Aluno1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Aluno</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   historicoDisciplinas: ArrayList&lt;Disciplina&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   matricula: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ apagarDisciplina(disciplina: Disciplina)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculaIRA(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ imprimirHistorico(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ novaDisc(disciplina: Disciplina)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ temouNaoADisciplina(disciplina: Disciplina): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Avaliacao1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Avaliacao</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descricao: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   valor: double [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Disciplina1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Disciplina</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   avaliacoesDisciplina: ArrayList&lt;Avaliacao&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descricaoDisciplina: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ apagarAvaliacao(avaliacao: Avaliacao)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculaMedia(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ novaAvaliacao(avaliacao: Avaliacao)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ temouNaoAAvaliacao(avaliacao: Avaliacao): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Funcionario1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Funcionario</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   departamento: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Pessoa1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Pessoa</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   nome: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sexo: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   telefone: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ProfessorEfetivo1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ProfessorEfetivo</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   dataContrat: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nome: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   regime: Regime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   telefone: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ProfessorSubstituto1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ProfessorSubstituto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   numAulas: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Regime1927503155[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Regime</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descricao: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   salario: double [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Aluno1927503155 -> Avaliacao1927503155[arrowhead=none];
+Aluno1927503155 -> Disciplina1927503155[arrowhead=none];
+Aluno1927503155 -> Disciplina1927503155[label="historicoDisciplinas
+[0..*]"];
+Aluno1927503155 -> ProfessorEfetivo1927503155[arrowhead=none];
+Aluno1927503155 -> ProfessorSubstituto1927503155[arrowhead=none];
+Disciplina1927503155 -> Avaliacao1927503155[label="avaliacoesDisciplina
+[0..*]"];
+Funcionario1927503155 -> ProfessorEfetivo1927503155[arrowhead=none, arrowtail=empty, dir=both];
+Funcionario1927503155 -> ProfessorSubstituto1927503155[arrowhead=none, arrowtail=empty, dir=both];
+Pessoa1927503155 -> Aluno1927503155[arrowhead=none, arrowtail=empty, dir=both];
+Pessoa1927503155 -> Funcionario1927503155[arrowhead=none, arrowtail=empty, dir=both];
+ProfessorEfetivo1927503155 -> Regime1927503155[label="regime
+[0..1]"];
+    
+}
+@enduml

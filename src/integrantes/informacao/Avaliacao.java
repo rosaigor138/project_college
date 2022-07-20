@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-public class Avaliacao {
+public class Avaliacao{
     private String descricao;
     private double valor;
     private static int contadorId =0;
@@ -15,15 +15,18 @@ public class Avaliacao {
     public String getIdAv(){
         return  "A"+id;
     }
+<<<<<<< Updated upstream
     public String getDesc() {
        return "Essa e a: "+descricao+" e ela vale: "+valor;
     }
+=======
+>>>>>>> Stashed changes
     public double getValor(){
         return this.valor;
     }
 
     @Override
     public String toString() {
-        return getDesc();
+        return "Essa e a: "+descricao+" e ela vale: "+valor;
     }
 }

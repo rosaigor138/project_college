@@ -6,24 +6,24 @@ public class testeColegio {
         //Aluno.date = LocalDate.now();
         Aluno a1 = new Aluno("Igor Rosa",
                 "3298800000",
-                "igorrosa@igorrosa.com");
+                "igorrosa@igorrosa.com",false);
         System.out.println(a1.getDesc());
         //Aluno.date.plusYears(1);
-        Aluno a2 = new Aluno("Igor Rosa",
+        Aluno a2 = new Aluno("maria",
                 "3298800000",
-                "igorrosa@igorrosa.com");
+                "maria@maria.com",true);
         ProfessorEfetivo pe1 = new ProfessorEfetivo("Hilton martins",
                 "329999999",
                 "hiltonmartins@ifsudeste.com",
                 "01/01/2001",
-                new Regime("Dedicacao Exclusiva",1800.00),
-                "Departamento de TI");
-        System.out.println(pe1.getDesc());
-        ProfessorSubstituto ps1 = new ProfessorSubstituto("prof.igu",
+                new Regime(true),
+                "Departamento de TI",true);//hilton mocinha
+        System.out.println(pe1.toString());
+        ProfessorSubstituto ps1 = new ProfessorSubstituto("Igor Rosa",
                 "329999999",
                 "igor@ifsudeste.com",
                 "ti",
-                20);
+                20,45.50,false);
         System.out.println(ps1.getDesc());
         Avaliacao av1 = new Avaliacao("Prim Prova",9.00);
         Avaliacao av2 = new Avaliacao("Segunda prova",4.00);
@@ -70,6 +70,11 @@ public class testeColegio {
         System.out.println(ds3.toString());
         ds3.apagarAvaliacao(avt);
         System.out.println(ds3.toString());
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(a1));
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(pe1));
+        System.out.println(IdentificadorPessoa.IdentificadorPessoa(ps1));
+        System.out.println(ps1.getSalarioMesAtual());
+        System.out.println(pe1.getSalario());
     }
 
 }
