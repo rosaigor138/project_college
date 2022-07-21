@@ -1,11 +1,10 @@
 package integrantes.informacao;
 
-public class Avaliacao implements Descricoes{
+public class Avaliacao{
     private String descricao;
     private double valor;
     private static int contadorId =0;
     private int id;
-
     public Avaliacao(String descricao, double valor){
         this.descricao = descricao;
         this.valor = valor;
@@ -24,6 +23,6 @@ public class Avaliacao implements Descricoes{
 
     @Override
     public String toString() {
-        return getDesc();
+        return "Essa e a: "+descricao+" e ela vale: "+valor;
     }
 }

@@ -1,7 +1,7 @@
 package integrantes.informacao;
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Aluno extends Pessoa implements Descricoes , Tratamento{
+public class Aluno extends Pessoa implements Tratamento{
 
     private ArrayList<Disciplina> historicoDisciplinas;
     private static int contadorMatricula = 1;
@@ -24,7 +24,6 @@ public class Aluno extends Pessoa implements Descricoes , Tratamento{
             return "Prezada Aluna "+getNome();
         }else return "Prezado Aluno "+getNome();
     }
-
 
     public void novaDisc(Disciplina disciplina) {
         this.historicoDisciplinas.add(disciplina);
@@ -51,17 +50,13 @@ public class Aluno extends Pessoa implements Descricoes , Tratamento{
             ira += historicoDisciplinas.get(i).calculaMedia();
         }return ira/historicoDisciplinas.size();
     }
-    public String imprimirHistorico(){
-        String historico = "\n Historico de disciplinas do" +
+    @Override
+    public String toString() {
+        String historico = "\n Historico de disciplinas do(a) " +
                 getTratamento()+" de matricula: "+
                 getMatricula()+"\n";
         for (int i =0;i< historicoDisciplinas.size();i++){
             historico = historico.concat(historicoDisciplinas.get(i).toString());
         }return historico;
-    }
-
-    @Override
-    public String toString() {
-        return imprimirHistorico();
     }
 }

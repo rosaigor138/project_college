@@ -1,6 +1,6 @@
 package integrantes.informacao;
 import java.util.ArrayList;
-public class Disciplina implements Descricoes{
+public class Disciplina{
     private String descricaoDisciplina;
     private ArrayList<Avaliacao> avaliacoesDisciplina;
     private static int contadorId = 0;
@@ -38,18 +38,12 @@ public class Disciplina implements Descricoes{
     public String getDescricaoDisciplina(){
         return this.descricaoDisciplina;
     }
-
-    public String getDesc(){
+    @Override
+    public String toString() {
         String text = "A Disciplina e: "+getDescricaoDisciplina()+" de Id:"+getID()+"\n";
         for (int i=0;i<this.avaliacoesDisciplina.size();i++){
             text = text.concat(this.avaliacoesDisciplina.get(i).toString()+"\n");
         }
         return text;
-
     }
-    @Override
-    public String toString() {
-        return getDesc();
-    }
-
 }

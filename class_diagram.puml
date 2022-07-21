@@ -159,6 +159,7 @@ Pessoa1927503155[
 <HR/>
 <TR><TD ALIGN="LEFT" >#   email: String [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   nome: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sexo: boolean [1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   telefone: String [0..1]</TD></TR>
 </TABLE>>
 	style=filled
@@ -187,7 +188,6 @@ ProfessorSubstituto1927503155[
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
 <TR><TD ALIGN="LEFT" >(C)ProfessorSubstituto</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >-   departamento: String [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   numAulas: int [1]</TD></TR>
 </TABLE>>
 	style=filled
@@ -215,6 +215,7 @@ Aluno1927503155 -> Avaliacao1927503155[arrowhead=none];
 Aluno1927503155 -> Disciplina1927503155[arrowhead=none];
 Aluno1927503155 -> Disciplina1927503155[label="historicoDisciplinas
 [0..*]"];
+Aluno1927503155 -> ProfessorEfetivo1927503155[arrowhead=none];
 Aluno1927503155 -> ProfessorSubstituto1927503155[arrowhead=none];
 Disciplina1927503155 -> Avaliacao1927503155[label="avaliacoesDisciplina
 [0..*]"];
