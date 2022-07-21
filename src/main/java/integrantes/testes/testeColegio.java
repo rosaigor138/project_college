@@ -3,7 +3,6 @@ import integrantes.informacao.*;
 
 public class testeColegio {
     public static void main(String[] args) {
-        //Aluno.date = LocalDate.now();
         Aluno a1 = new Aluno("Igor Rosa",
                 "3298800000",
                 "igorrosa@igorrosa.com",false);
@@ -17,14 +16,14 @@ public class testeColegio {
                 "hiltonmartins@ifsudeste.com",
                 "01/01/2001",
                 new Regime(true),
-                "Departamento de TI",true);//hilton mocinha
+                "Departamento de TI",false);
         System.out.println(pe1.toString());
-        ProfessorSubstituto ps1 = new ProfessorSubstituto("Igor Rosa",
+        ProfessorSubstituto ps1 = new ProfessorSubstituto("maria",
                 "329999999",
-                "igor@ifsudeste.com",
+                "maria@ifsudeste.com",
                 "ti",
-                20,45.50,false);
-        System.out.println(ps1.getDesc());
+                20,45.50,true);
+        System.out.println(ps1.toString());
         Avaliacao av1 = new Avaliacao("Prim Prova",9.00);
         Avaliacao av2 = new Avaliacao("Segunda prova",4.00);
         Avaliacao av3 = new Avaliacao("Terceira prova", 6.00);
@@ -45,19 +44,17 @@ public class testeColegio {
         ds3.novaAvaliacao(av2);
         ds3.novaAvaliacao(av3);
         ds3.novaAvaliacao(av4);
-        //System.out.println((ds1.toString()));
         a1.novaDisc(ds1);
         a1.novaDisc(ds2);
         a2.novaDisc(ds3);
         a1.novaDisc(ds3);
-        System.out.println(a1.imprimirHistorico());
-        //System.out.println(a1.toString());
+        System.out.println(a1.toString());
         System.out.println(a1.getMatricula());
         System.out.println(a2.getMatricula());
         System.out.println(ds1.getID());
         System.out.println(av1.getIdAv());
         System.out.println(av2.getIdAv());
-        System.out.println(a2.imprimirHistorico());
+        System.out.println(a2.toString());
         System.out.println(ds1.calculaMedia());
         System.out.println(a1.calculaIRA());
         System.out.println(a1.temouNaoADisciplina(ds3));
@@ -70,10 +67,10 @@ public class testeColegio {
         System.out.println(ds3.toString());
         ds3.apagarAvaliacao(avt);
         System.out.println(ds3.toString());
-        System.out.println(IdentificadorPessoa.IdentificadorPessoa(a1));
-        System.out.println(IdentificadorPessoa.IdentificadorPessoa(pe1));
-        System.out.println(IdentificadorPessoa.IdentificadorPessoa(ps1));
+        System.out.println(IdentificadorPessoa.IdentificarPessoa(a1));
+        System.out.println(IdentificadorPessoa.IdentificarPessoa(ps1));
         System.out.println(ps1.getSalarioMesAtual());
+        System.out.println(IdentificadorPessoa.IdentificarPessoa(pe1));
         System.out.println(pe1.getSalario());
     }
 

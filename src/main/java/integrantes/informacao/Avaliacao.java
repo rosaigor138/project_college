@@ -16,13 +16,6 @@ public class Avaliacao{
         String idAv;
         return  idAv = "A"+id;
     }
-<<<<<<< Updated upstream
-    public String getDesc() {
-       String desc = "Essa e a: "+descricao+" e ela vale: "+valor;
-       return desc;
-    }
-=======
->>>>>>> Stashed changes
     public double getValor(){
         return this.valor;
     }

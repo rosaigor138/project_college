@@ -1,7 +1,8 @@
 package integrantes.informacao;
 
 public abstract class IdentificadorPessoa{
-    public static String IdentificadorPessoa(Pessoa pessoa){
+    private IdentificadorPessoa(){}
+    public static String IdentificarPessoa(Pessoa pessoa){
         return pessoa.getTratamento();
     }
 }
