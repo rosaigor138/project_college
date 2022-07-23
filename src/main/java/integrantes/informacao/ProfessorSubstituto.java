@@ -27,9 +27,6 @@ public class ProfessorSubstituto extends Funcionario implements Tratamento{
     public int getNumAulas() {
         return numAulas;
     }
-    public String identificacao(){
-        return "É um Professor Substituto";
-    }
     @Override
     public String toString(){
         return getTratamento() + " Telefone: " + getTelefone() + "\n(" + getEmail() + ")\n" +

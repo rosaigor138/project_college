@@ -55,9 +55,6 @@ public class Aluno extends Pessoa implements Tratamento{
     public String emitirHistorico(){
         return toString();
     }
-    public String identificacao(){
-        return "É um aluno";
-    }
     @Override
     public String toString() {
         String historico = "\n Historico de disciplinas do(a) " +
