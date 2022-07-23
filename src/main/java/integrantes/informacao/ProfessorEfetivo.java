@@ -25,6 +25,10 @@ public class ProfessorEfetivo extends Funcionario implements Tratamento{
     public boolean getDedicacao(){
         return regime.getDedicacao();
     }
+    public String identificacao(){
+        return "E um professor efetivo";
+    }
+
     @Override
     public String toString(){
         String desc = getTratamento()+

@@ -21,5 +21,5 @@ public abstract class Pessoa implements Tratamento {
     public String getEmail(){
         return this.email;
     }
-
+    public abstract String identificacao();
 }
