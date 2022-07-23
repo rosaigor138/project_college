@@ -18,6 +18,9 @@ public class ProfessorSubstituto extends Funcionario implements Tratamento{
     public double getSalarioMesAtual(){
         return this.valorHoraAula * this.getNumAulas();
     }
+    public String identificacao(){
+        return "E um professor substituto";
+    }
     public static double getValorHoraAula() {
         return valorHoraAula;
     }

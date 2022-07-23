@@ -22,5 +22,4 @@ public abstract class Pessoa implements Tratamento {
         return this.email;
     }
     public abstract String identificacao();
-
 }

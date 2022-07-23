@@ -24,7 +24,9 @@ public class Aluno extends Pessoa implements Tratamento{
             return "Prezada Aluna "+getNome();
         }else return "Prezado Aluno "+getNome();
     }
-
+    public String identificacao(){
+        return "E um aluno";
+    }
     public void novaDisc(Disciplina disciplina) {
         this.historicoDisciplinas.add(disciplina);
     }
