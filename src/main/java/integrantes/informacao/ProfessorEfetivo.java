@@ -22,6 +22,9 @@ public class ProfessorEfetivo extends Funcionario implements Tratamento{
     public double getSalario(){
         return regime.getSalario();
     }
+    public String identificacao(){
+        return "É um Professor Efetivo";
+    }
     public boolean getDedicacao(){
         return regime.getDedicacao();
     }

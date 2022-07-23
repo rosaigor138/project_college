@@ -48,13 +48,13 @@ public class testeColegio {
         a1.novaDisc(ds2);
         a2.novaDisc(ds3);
         a1.novaDisc(ds3);
-        System.out.println(a1.toString());
+        System.out.println(a1.emitirHistorico());
         System.out.println(a1.getMatricula());
         System.out.println(a2.getMatricula());
         System.out.println(ds1.getID());
         System.out.println(av1.getIdAv());
         System.out.println(av2.getIdAv());
-        System.out.println(a2.toString());
+        System.out.println(a2.emitirHistorico());
         System.out.println(ds1.calculaMedia());
         System.out.println(a1.calculaIRA());
         System.out.println(a1.temouNaoADisciplina(ds3));

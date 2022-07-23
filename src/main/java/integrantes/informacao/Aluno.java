@@ -50,6 +50,12 @@ public class Aluno extends Pessoa implements Tratamento{
             ira += historicoDisciplinas.get(i).calculaMedia();
         }return ira/historicoDisciplinas.size();
     }
+    public String emitirHistorico(){
+        return toString();
+    }
+    public String identificacao(){
+        return "É um aluno";
+    }
     @Override
     public String toString() {
         String historico = "\n Historico de disciplinas do(a) " +
