@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public class ProfessorSubstituto extends Funcionario implements Tratamento{
     private int numAulas;

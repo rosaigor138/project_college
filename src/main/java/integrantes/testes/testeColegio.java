@@ -1,5 +1,5 @@
 package integrantes.testes;
-import integrantes.informacao.*;
+import model.*;
 
 public class testeColegio {
     public static void main(String[] args) {

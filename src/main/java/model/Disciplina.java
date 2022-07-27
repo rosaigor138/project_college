@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 import java.util.ArrayList;
 public class Disciplina{
     private String descricaoDisciplina;

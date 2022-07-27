@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public class Regime {
     private boolean dedicacao;//true para exclusiva e false para não

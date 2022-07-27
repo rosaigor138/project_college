@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public class Avaliacao{
     private String descricao;

@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public abstract class Funcionario extends Pessoa{
     protected String departamento;

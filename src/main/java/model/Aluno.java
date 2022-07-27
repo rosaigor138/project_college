@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Aluno extends Pessoa implements Tratamento{

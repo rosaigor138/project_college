@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public abstract class Pessoa implements Tratamento {
     protected String nome;

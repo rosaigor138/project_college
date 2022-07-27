@@ -1,4 +1,4 @@
-package integrantes.informacao;
+package model;
 
 public class ProfessorEfetivo extends Funcionario implements Tratamento{
     private String dataContrat;
