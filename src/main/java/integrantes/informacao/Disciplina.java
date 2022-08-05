@@ -16,11 +16,17 @@ public class Disciplina{
     public void novaAvaliacao(Avaliacao avaliacao){
         this.avaliacoesDisciplina.add(avaliacao);
     }
+
+    public ArrayList<Avaliacao> getAvaliacoesDisciplina() {
+        return avaliacoesDisciplina;
+    }
+
     public boolean temouNaoAAvaliacao(Avaliacao avaliacao){
         if (this.avaliacoesDisciplina.indexOf(avaliacao)<0){
             return false;
         }return true;
     }
+
     public void apagarAvaliacao(Avaliacao avaliacao){
         avaliacoesDisciplina.remove(avaliacao);
     }

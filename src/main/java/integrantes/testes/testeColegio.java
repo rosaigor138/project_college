@@ -1,3 +1,4 @@
+/*
 package integrantes.testes;
 import integrantes.informacao.*;
 
@@ -28,7 +29,7 @@ public class testeColegio {
         Avaliacao av2 = new Avaliacao("Segunda prova",4.00);
         Avaliacao av3 = new Avaliacao("Terceira prova", 6.00);
         Avaliacao av4 = new Avaliacao("Quarta Avaliacao",5.41);
-        Avaliacao avt = new Avaliacao("Avaliacao teste",0.00);
+        Avaliacao avt = new Avaliacao("Avaliacao teste",-9.00);
         Disciplina ds1 = new Disciplina("Algoritmos");
         Disciplina ds2 = new Disciplina("Matematica");
         Disciplina ds3 = new Disciplina("Algoritmos");
@@ -69,9 +70,10 @@ public class testeColegio {
         System.out.println(ds3.toString());
         System.out.println(IdentificadorPessoa.IdentificarPessoa(a1));
         System.out.println(IdentificadorPessoa.IdentificarPessoa(ps1));
-        System.out.println(ps1.getSalarioMesAtual());
+        System.out.println(ps1.calculaSalario());
         System.out.println(IdentificadorPessoa.IdentificarPessoa(pe1));
-        System.out.println(pe1.getSalario());
+        System.out.println(pe1.calculaSalario());
     }
 
 }
+*/

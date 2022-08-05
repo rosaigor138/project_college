@@ -1,6 +1,8 @@
 package integrantes.informacao;
 
-public class ProfessorEfetivo extends Funcionario implements Tratamento{
+import integrantes.interfaces.Tratamento;
+
+public class ProfessorEfetivo extends Funcionario implements Tratamento {
     private String dataContrat;
     private Regime regime;
     public ProfessorEfetivo(String nome,
@@ -19,12 +21,14 @@ public class ProfessorEfetivo extends Funcionario implements Tratamento{
             return "Profa Efetiva "+getNome();
         }else return "Prof Efetivo "+getNome();
     }
-    public double getSalario(){
+    @Override
+    public double calculaSalario(){
         return regime.getSalario();
     }
     public boolean getDedicacao(){
         return regime.getDedicacao();
     }
+    @Override
     public String identificacao(){
         return "E um professor efetivo";
     }

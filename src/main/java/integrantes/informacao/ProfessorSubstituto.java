@@ -1,6 +1,8 @@
 package integrantes.informacao;
 
-public class ProfessorSubstituto extends Funcionario implements Tratamento{
+import integrantes.interfaces.Tratamento;
+
+public class ProfessorSubstituto extends Funcionario implements Tratamento {
     private int numAulas;
     private static double valorHoraAula;
     public ProfessorSubstituto(String nome, String telefone, String email,
@@ -15,9 +17,6 @@ public class ProfessorSubstituto extends Funcionario implements Tratamento{
             return "Profa Sub "+getNome();
         }else return "Prof Sub "+getNome();
     }
-    public double getSalarioMesAtual(){
-        return this.valorHoraAula * this.getNumAulas();
-    }
     public String identificacao(){
         return "E um professor substituto";
     }
@@ -31,5 +30,10 @@ public class ProfessorSubstituto extends Funcionario implements Tratamento{
     public String toString(){
         return getTratamento() + " Telefone: " + getTelefone() + "\n(" + getEmail() + ")\n" +
                 "departamento: " + getTelefone() + " - " + getNumAulas() + " aulas mensais.";
+    }
+
+    @Override
+    public double calculaSalario() {
+        return this.valorHoraAula * this.getNumAulas();
     }
 }

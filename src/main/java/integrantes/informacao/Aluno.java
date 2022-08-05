@@ -1,7 +1,14 @@
 package integrantes.informacao;
+import integrantes.interfaces.Tratamento;
+import integrantes.ordenacao.OrdenarAvaliacaoMaiorPonto;
+import integrantes.ordenacao.OrdenarAvaliacaoMenorPonto;
+import integrantes.ordenacao.OrdenarDisciplinasOrdemAlfabetica;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Aluno extends Pessoa implements Tratamento{
+import java.util.Collections;
+
+public class Aluno extends Pessoa implements Tratamento {
 
     private ArrayList<Disciplina> historicoDisciplinas;
     private static int contadorMatricula = 1;
@@ -31,6 +38,37 @@ public class Aluno extends Pessoa implements Tratamento{
         this.historicoDisciplinas.add(disciplina);
     }
 
+    public String ordenarAvaliacoesAlunoMaior(){
+        ArrayList<Avaliacao> listaAvaliacoes = new ArrayList<>();
+        OrdenarAvaliacaoMaiorPonto ord = new OrdenarAvaliacaoMaiorPonto();
+        for (Disciplina count : historicoDisciplinas){
+            for (Avaliacao avaliacoes: count.getAvaliacoesDisciplina()){
+                listaAvaliacoes.add(avaliacoes);
+            }
+        }
+        Collections.sort(listaAvaliacoes,ord);
+        String retornodaOrdem="As avaliacoes do aluno em ordem descrescente são: \n";
+        for (Avaliacao ordenada: listaAvaliacoes){
+            retornodaOrdem = retornodaOrdem.concat(ordenada.toString()+"\n");
+        }
+        return retornodaOrdem;
+    }
+    public String ordenarAvaliacoesAlunoMenor(){
+        ArrayList<Avaliacao> listaAvaliacoes = new ArrayList<>();
+        OrdenarAvaliacaoMenorPonto ord = new OrdenarAvaliacaoMenorPonto();
+        for (Disciplina count : historicoDisciplinas){
+            for (Avaliacao avaliacoes: count.getAvaliacoesDisciplina()){
+                listaAvaliacoes.add(avaliacoes);
+            }
+        }
+        Collections.sort(listaAvaliacoes,ord);
+        String retornodaOrdem="As avaliacoes do aluno em ordem crescente são: \n";
+        for (Avaliacao ordenada: listaAvaliacoes){
+            retornodaOrdem = retornodaOrdem.concat(ordenada.toString()+"\n");
+        }
+        return retornodaOrdem;
+    }
+
     public boolean temouNaoADisciplina(Disciplina disciplina){
         if (this.historicoDisciplinas.indexOf(disciplina)<0){
             return false;   
@@ -54,6 +92,17 @@ public class Aluno extends Pessoa implements Tratamento{
     }
     public String emitirHistorico(){
         return toString();
+    }
+    public String emitirHistoricoAvalicoesOrdemAlfabetica(){
+        ArrayList<Disciplina> disc = new ArrayList<>();
+        OrdenarDisciplinasOrdemAlfabetica ord = new OrdenarDisciplinasOrdemAlfabetica();
+        String historico = "\n Historico de disciplinas do(a) " +
+                getTratamento()+" de matricula: "+
+                getMatricula()+"\n";
+        Collections.sort(historicoDisciplinas,ord);
+        for (Disciplina di: historicoDisciplinas){
+            historico = historico.concat(di.toString());
+        }return historico;
     }
     @Override
     public String toString() {

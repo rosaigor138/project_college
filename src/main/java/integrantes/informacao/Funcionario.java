@@ -7,6 +7,7 @@ public abstract class Funcionario extends Pessoa{
         super(nome, telefone, email,sexo);
         this.departamento = departamento;
     }
+    public abstract double calculaSalario();
 
     public String getDepartamento() {
         return departamento;
