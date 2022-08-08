@@ -1,4 +1,4 @@
-package integrantes.ordenacao;
+package integrantes.api.ordenacao;
 
 import integrantes.informacao.Avaliacao;
 

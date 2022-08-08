@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-import integrantes.exceptions.invalidValueException;
+import integrantes.api.exception.invalidValueException;
 
 public class Avaliacao{
     private String descricao;

@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-import integrantes.interfaces.Tratamento;
+import integrantes.api.interfaces.Tratamento;
 
 public abstract class Pessoa implements Tratamento {
     protected String nome;

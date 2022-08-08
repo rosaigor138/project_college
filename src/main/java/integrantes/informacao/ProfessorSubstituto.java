@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-import integrantes.interfaces.Tratamento;
+import integrantes.api.interfaces.Tratamento;
 
 public class ProfessorSubstituto extends Funcionario implements Tratamento {
     private int numAulas;

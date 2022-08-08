@@ -1,4 +1,4 @@
-package integrantes.exceptions;
+package integrantes.api.exception;
 
 public class invalidValueException extends Exception{
     public invalidValueException(){}

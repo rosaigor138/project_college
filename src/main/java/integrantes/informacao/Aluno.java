@@ -1,8 +1,8 @@
 package integrantes.informacao;
-import integrantes.interfaces.Tratamento;
-import integrantes.ordenacao.OrdenarAvaliacaoMaiorPonto;
-import integrantes.ordenacao.OrdenarAvaliacaoMenorPonto;
-import integrantes.ordenacao.OrdenarDisciplinasOrdemAlfabetica;
+import integrantes.api.interfaces.Tratamento;
+import integrantes.api.ordenacao.OrdenarAvaliacaoMaiorPonto;
+import integrantes.api.ordenacao.OrdenarAvaliacaoMenorPonto;
+import integrantes.api.ordenacao.OrdenarDisciplinasOrdemAlfabetica;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -84,11 +84,14 @@ public class Aluno extends Pessoa implements Tratamento {
         String desc = getTratamento() + " Telefone: " + telefone    + "\n(" + email + ")";
         return desc;
     }
-    public double calculaIRA(){
-        double ira = 0;
-        for(int i=0; i<historicoDisciplinas.size();i++){
+    public int calculaIRA(){
+        int ira = 0;
+        if (this.historicoDisciplinas.isEmpty()) {
+            return -1;
+        }else {for (int i = 0; i < historicoDisciplinas.size(); i++) {
             ira += historicoDisciplinas.get(i).calculaMedia();
-        }return ira/historicoDisciplinas.size();
+        }
+        return ira / historicoDisciplinas.size();}
     }
     public String emitirHistorico(){
         return toString();
@@ -104,6 +107,7 @@ public class Aluno extends Pessoa implements Tratamento {
             historico = historico.concat(di.toString());
         }return historico;
     }
+
     @Override
     public String toString() {
         String historico = "\n Historico de disciplinas do(a) " +

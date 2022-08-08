@@ -1,6 +1,4 @@
 package integrantes.testes;
-import integrantes.ordenacao.*;
-import integrantes.exceptions.invalidValueException;
 import integrantes.informacao.Avaliacao;
 
 public class TesteException {

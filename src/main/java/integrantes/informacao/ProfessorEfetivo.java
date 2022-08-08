@@ -1,6 +1,6 @@
 package integrantes.informacao;
 
-import integrantes.interfaces.Tratamento;
+import integrantes.api.interfaces.Tratamento;
 
 public class ProfessorEfetivo extends Funcionario implements Tratamento {
     private String dataContrat;
