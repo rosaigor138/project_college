@@ -97,9 +97,13 @@ subgraph cluster_63486649 {
 <TR><TD ALIGN="LEFT" >-   matricula: String [0..1]</TD></TR>
 <HR/>
 <TR><TD ALIGN="LEFT" >+ apagarDisciplina(disciplina: Disciplina)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ calculaIRA(): double</TD></TR>
-<TR><TD ALIGN="LEFT" >+ imprimirHistorico(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculaIRA(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ emitirHistorico(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ emitirHistoricoAvalicoesOrdemAlfabetica(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ identificacao(): String</TD></TR>
 <TR><TD ALIGN="LEFT" >+ novaDisc(disciplina: Disciplina)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ordenarAvaliacoesAlunoMaior(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ordenarAvaliacoesAlunoMenor(): String</TD></TR>
 <TR><TD ALIGN="LEFT" >+ temouNaoADisciplina(disciplina: Disciplina): boolean</TD></TR>
 </TABLE>>
 	style=filled
@@ -114,7 +118,7 @@ Avaliacao1927503155[
 <HR/>
 <TR><TD ALIGN="LEFT" >-   descricao: String [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   id: int [1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   valor: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   valor: int [1]</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -146,6 +150,8 @@ Funcionario1927503155[
 <TR><TD ALIGN="LEFT" >(C)Funcionario</TD></TR>
 <HR/>
 <TR><TD ALIGN="LEFT" >#   departamento: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculaSalario(): double</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -161,6 +167,8 @@ Pessoa1927503155[
 <TR><TD ALIGN="LEFT" >#   nome: String [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   sexo: boolean [1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   telefone: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ identificacao(): String</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -173,10 +181,10 @@ ProfessorEfetivo1927503155[
 <TR><TD ALIGN="LEFT" >(C)ProfessorEfetivo</TD></TR>
 <HR/>
 <TR><TD ALIGN="LEFT" >-   dataContrat: String [0..1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   nome: String [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   regime: Regime [0..1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   telefone: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculaSalario(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ identificacao(): String</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -189,6 +197,9 @@ ProfessorSubstituto1927503155[
 <TR><TD ALIGN="LEFT" >(C)ProfessorSubstituto</TD></TR>
 <HR/>
 <TR><TD ALIGN="LEFT" >-   numAulas: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculaSalario(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ identificacao(): String</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -200,7 +211,7 @@ Regime1927503155[
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
 <TR><TD ALIGN="LEFT" >(C)Regime</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >-   descricao: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   dedicacao: boolean [1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   salario: double [1]</TD></TR>
 </TABLE>>
 	style=filled
@@ -211,10 +222,9 @@ Regime1927503155[
 } 
 
 'edges    
-Aluno1927503155 -> Avaliacao1927503155[arrowhead=none];
-Aluno1927503155 -> Disciplina1927503155[arrowhead=none];
 Aluno1927503155 -> Disciplina1927503155[label="historicoDisciplinas
 [0..*]"];
+Aluno1927503155 -> Pessoa1927503155[arrowhead=none];
 Aluno1927503155 -> ProfessorEfetivo1927503155[arrowhead=none];
 Aluno1927503155 -> ProfessorSubstituto1927503155[arrowhead=none];
 Disciplina1927503155 -> Avaliacao1927503155[label="avaliacoesDisciplina
@@ -223,6 +233,8 @@ Funcionario1927503155 -> ProfessorEfetivo1927503155[arrowhead=none, arrowtail=em
 Funcionario1927503155 -> ProfessorSubstituto1927503155[arrowhead=none, arrowtail=empty, dir=both];
 Pessoa1927503155 -> Aluno1927503155[arrowhead=none, arrowtail=empty, dir=both];
 Pessoa1927503155 -> Funcionario1927503155[arrowhead=none, arrowtail=empty, dir=both];
+Pessoa1927503155 -> ProfessorEfetivo1927503155[label="identificacao() -> identificacao()"];
+Pessoa1927503155 -> ProfessorSubstituto1927503155[label="identificacao() -> identificacao()"];
 ProfessorEfetivo1927503155 -> Regime1927503155[label="regime
 [0..1]"];
     
