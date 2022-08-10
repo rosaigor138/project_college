@@ -70,10 +70,9 @@ public class Aluno extends Pessoa implements Tratamento {
     }
 
     public boolean temouNaoADisciplina(Disciplina disciplina){
-        if (this.historicoDisciplinas.indexOf(disciplina)<0){
-            return false;   
-        }return true;
+        return this.historicoDisciplinas.contains(disciplina);
     }
+
     public void apagarDisciplina(Disciplina disciplina){
         historicoDisciplinas.remove(disciplina);
     }

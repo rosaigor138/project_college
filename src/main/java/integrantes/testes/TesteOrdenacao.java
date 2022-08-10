@@ -41,5 +41,6 @@ public class TesteOrdenacao {
         System.out.println(a1.ordenarAvaliacoesAlunoMenor());
         System.out.println("\n--TESTE DISCIPLINAS ORDEM ALFABETICA--" + "\n");
         System.out.println(a1.emitirHistoricoAvalicoesOrdemAlfabetica());
+        System.out.println(a1.temouNaoADisciplina(ds1));
     }
 }
