@@ -1,34 +1,39 @@
 package integrantes.informacao;
-import java.util.ArrayList;
+import integrantes.api.genericsArray.TratamentoArraylist;
+
+import java.util.List;
+
 public class Disciplina{
     private String descricaoDisciplina;
-    private ArrayList<Avaliacao> avaliacoesDisciplina;
+    private TratamentoArraylist<Avaliacao> avaliacoesDisciplina;
     private static int contadorId = 0;
     private int id=0;
 
 
     public Disciplina(String materia) {
         this.descricaoDisciplina = materia;
-        avaliacoesDisciplina = new ArrayList<Avaliacao>();
+        avaliacoesDisciplina = new TratamentoArraylist<>();
         Disciplina.contadorId++;
         this.id = contadorId;
     }
     public void novaAvaliacao(Avaliacao avaliacao){
-        this.avaliacoesDisciplina.add(avaliacao);
+        this.avaliacoesDisciplina.adiciona(avaliacao);
     }
 
-    public ArrayList<Avaliacao> getAvaliacoesDisciplina() {
-        return avaliacoesDisciplina;
+    public List<Avaliacao> getAvaliacoesDisciplina() {
+        return avaliacoesDisciplina.getArray();
     }
-
+    public boolean estaVazia(){
+        return this.avaliacoesDisciplina.estaVazia();
+    }
     public boolean temouNaoAAvaliacao(Avaliacao avaliacao){
-        if (this.avaliacoesDisciplina.indexOf(avaliacao)<0){
-            return false;
-        }return true;
+        return this.avaliacoesDisciplina.temOuNao(avaliacao);
     }
-
+    public void adicionaEmGrupo(List<Avaliacao> l){
+        this.avaliacoesDisciplina.adicionaEmGrupo(l);
+    }
     public void apagarAvaliacao(Avaliacao avaliacao){
-        avaliacoesDisciplina.remove(avaliacao);
+        avaliacoesDisciplina.retira(avaliacao);
     }
 
     public String getID(){
@@ -36,10 +41,10 @@ public class Disciplina{
     }
     public double calculaMedia(){
         double media = 0;
-        for (int i = 0; i< this.avaliacoesDisciplina.size(); i++){
-            media += avaliacoesDisciplina.get(i).getValor();
+        for (int i = 0; i< this.avaliacoesDisciplina.tamanho(); i++){
+            media += avaliacoesDisciplina.retornaObj(i).getValor();
 
-        }return media/this.avaliacoesDisciplina.size();
+        }return media/this.avaliacoesDisciplina.tamanho();
     }
     public String getDescricaoDisciplina(){
         return this.descricaoDisciplina;
@@ -47,8 +52,8 @@ public class Disciplina{
     @Override
     public String toString() {
         String text = "A Disciplina e: "+getDescricaoDisciplina()+" de Id:"+getID()+"\n";
-        for (int i=0;i<this.avaliacoesDisciplina.size();i++){
-            text = text.concat(this.avaliacoesDisciplina.get(i).toString()+"\n");
+        for (int i=0;i<this.avaliacoesDisciplina.tamanho();i++){
+            text = text.concat(this.avaliacoesDisciplina.retornaObj(i).toString()+"\n");
         }
         return text;
     }
