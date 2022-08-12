@@ -33,6 +33,20 @@ public class ClassificacaoAluno {
             ClassificacaoAluno.atualizaAluno(i);
         }
         Set<Aluno> lista = classificacao.keySet();
+
         return lista;
     }
+    public static String getListaString(){
+        for (Aluno i:classificacao.keySet()){
+            ClassificacaoAluno.atualizaAluno(i);
+        }
+        Set<Aluno> lista = classificacao.keySet();
+        String x = "";
+        for (Aluno a: classificacao.keySet()){
+            x = x.concat(a.getTratamento()+" "+
+                    ClassificacaoAluno.getClassificacaoAluno(a)+"\n");
+        }
+        return x;
+    }
+
 }

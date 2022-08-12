@@ -46,7 +46,10 @@ public class TesteClassificacao {
             alunosclassificados = alunosclassificados.concat
                     (a.getTratamento()+" "+ClassificacaoAluno.getClassificacaoAluno(a)+"\n");
         }
-
     System.out.println(alunosclassificados);
+        System.out.println("\n\n*------*\nAbaixo tem o mesmo output" +
+                " mas o metodo retorna uma String.\n" +
+                "Nao necessitando ser formatado como o metodo que retorna a lista de chaves\n\n");
+    System.out.println(ClassificacaoAluno.getListaString());
     }
 }
