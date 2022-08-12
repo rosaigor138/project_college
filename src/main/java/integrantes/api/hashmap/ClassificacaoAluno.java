@@ -28,19 +28,18 @@ public class ClassificacaoAluno {
     public static void atualizaAluno(Aluno aluno){
         ClassificacaoAluno.atribuiAluno(aluno);
     }
-    public static Set<Aluno> getLista(){
+    public static void atualizaLista(){
         for (Aluno i:classificacao.keySet()){
             ClassificacaoAluno.atualizaAluno(i);
         }
+    }
+    public static Set<Aluno> getLista(){
+        ClassificacaoAluno.atualizaLista();
         Set<Aluno> lista = classificacao.keySet();
-
         return lista;
     }
     public static String getListaString(){
-        for (Aluno i:classificacao.keySet()){
-            ClassificacaoAluno.atualizaAluno(i);
-        }
-        Set<Aluno> lista = classificacao.keySet();
+        ClassificacaoAluno.atualizaLista();
         String x = "";
         for (Aluno a: classificacao.keySet()){
             x = x.concat(a.getTratamento()+" "+
