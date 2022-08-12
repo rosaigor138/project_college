@@ -2,7 +2,9 @@ package integrantes.api.genericsArray;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+Considerações, não foi tratado o retorno!
+ */
 public class TratamentoArraylist <E> {
     private List<E> lista = new ArrayList<>();
 

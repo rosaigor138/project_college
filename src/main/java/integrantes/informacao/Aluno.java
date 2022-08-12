@@ -89,7 +89,7 @@ public class Aluno extends Pessoa implements Tratamento {
     public int calculaIRA(){
         int ira = 0;
         if (this.historicoDisciplinas.estaVazia()) {
-            return -1;
+            return 0;
         }else {for (int i = 0; i < historicoDisciplinas.tamanho(); i++) {
             ira += historicoDisciplinas.retornaObj(i).calculaMedia();
         }

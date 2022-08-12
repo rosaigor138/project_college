@@ -9,7 +9,7 @@ public class TesteClassificacao {
     //Criação dos alunos
     Aluno a1 = new Aluno("Igor","880808090","igorrosa@",false);
     Aluno a2 = new Aluno("Maria","999999999","Maria@",true);
-    Aluno a3 = new Aluno("Nulo","sem tel","sem @",true);
+    Aluno a3 = new Aluno("NOta 0","sem tel","sem @",true);
     //Criação das disciplinas
     Disciplina matematica1 = new Disciplina("Matematica 1");
     Disciplina portugues1 = new Disciplina("Portugues 1");
@@ -46,9 +46,7 @@ public class TesteClassificacao {
             alunosclassificados = alunosclassificados.concat
                     (a.getTratamento()+" "+ClassificacaoAluno.getClassificacaoAluno(a)+"\n");
         }
+
     System.out.println(alunosclassificados);
-
-
-
     }
 }
